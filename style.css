@@ -1,30 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;700&display=swap");
 :root {
   --ff-primary: "League Spartan", sans-serif;
 }
 
-@font-face {
-  font-family: var(--ff-primary);
-  src: url(../../assets/fonts/LeagueSpartan-Black.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-Bold.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-ExtraBold.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-ExtraLight.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-Light.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-Medium.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-Regular.ttf) format("ttf");
-  src: url(../../assets/fonts/LeagueSpartan-SemiBold.ttf) format("ttf");
+.theme_1 {
+  --main-dark-desaturated-blue: hsl(222, 26%, 31%);
+  --toggle-dark-desaturated-blue: hsl(223, 31%, 20%);
+  --screen-dark-desaturated-blue: hsl(224, 36%, 15%);
+  --bg-dark-blue: hsl(225, 21%, 49%);
+  --shadow-dark-blue: hsl(224, 28%, 35%);
+  --Red: hsl(6, 63%, 50%);
+  --Dark-red: hsl(6, 70%, 34%);
+  --Light-grayish-orange: hsl(30, 25%, 89%);
+  --Grayish-orange: hsl(28, 16%, 65%);
+  --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
 }
+
+.theme_2 {
+  --main-dark-desaturated-blue: hsl(268, 75%, 9%);
+  --toggle-dark-desaturated-blue: hsl(268, 71%, 12%);
+  --bg-dark-blue: hsl(281, 89%, 26%);
+  --shadow-dark-blue: hsl(285, 91%, 52%);
+  --Red: hsl(176, 100%, 44%);
+  --Dark-red: hsl(177, 92%, 70%);
+  --Light-grayish-orange: hsl(268, 47%, 21%);
+  --Grayish-orange: hsl(290, 70%, 36%);
+  --white: hsl(52, 100%, 62%);
+  --Very-dark-grayish-blue: hsl(198, 20%, 13%);
+}
+
+.theme_3 {
+  --main-dark-desaturated-blue: hsl(0, 0%, 90%);
+  --toggle-dark-desaturated-blue: hsl(0, 5%, 81%);
+  --screen-dark-desaturated-blue: hsl(0, 0%, 93%);
+  --bg-dark-blue: hsl(185, 42%, 37%);
+  --shadow-dark-blue: hsl(185, 58%, 25%);
+  --Red: hsl(25, 98%, 40%);
+  --Dark-red: hsl(25, 99%, 27%);
+  --Light-grayish-orange: hsl(45, 7%, 89%);
+  --Grayish-orange: hsl(35, 11%, 61%);
+  --Very-dark-grayish-blue: hsl(60, 10%, 19%);
+  --white: hsl(0, 0, 100%);
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-jc-end {
+  justify-content: flex-end;
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 
 html,
 body {
   font-size: 100%;
   font-family: var(--ff-primary);
+  min-height: 100vh;
+  background-color: var(--main-dark-desaturated-blue);
 }
 
 a,
@@ -38,6 +91,113 @@ img {
 
 ul {
   list-style: none;
+}
+
+.app {
+  gap: 20px;
+}
+
+input[type=text] {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 30px;
+}
+
+.title h3 {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2em;
+}
+.title .toggle span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.title .toggle .change {
+  margin-bottom: 20px;
+  margin-left: 40px;
+  max-width: 30%;
+}
+.title .toggle .change section {
+  margin: 0 10px;
+}
+.title .toggle .change input[type=range] {
+  padding: 0 5px;
+  height: 30px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 20px;
+  outline: none;
+  background-color: var(--toggle-dark-desaturated-blue);
+}
+.title .toggle .change input[type=range]::-webkit-slider-runnable-track {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--Red);
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+.title .toggle .change input[type=range]::-webkit-slider-thumb {
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+.title .toggle .change input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--Red);
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+.title .toggle .change input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.title .toggle .change input[type=range]::-ms-fill-lower {
+  background: #3071a9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+.title .toggle .change input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+.title .toggle .change input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+}
+.title .toggle .change input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+.title .toggle .change input[type=range]:focus::-ms-fill-upper {
+  background: #3071a9;
 }
 
 /*# sourceMappingURL=style.css.map */

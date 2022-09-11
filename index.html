@@ -7,8 +7,27 @@
     <title>Calc App</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    HI guys
+  <body class="flex flex-ai-c flex-jc-c theme_1">
+    <div class="app flex flex-col">
+      <div class="title flex flex-jc-sb flex-ai-c">
+        <h3>calc</h3>
+        <section class="toggle flex-jc-end flex flex-ai-c">
+          <span>Theme</span>
+
+          <div class="change flex flex-col">
+            <section class="flex flex-jc-sb">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </section>
+            <input type="range" min="1" max="3" />
+          </div>
+        </section>
+      </div>
+      <div class="result">
+        <input type="text" />
+      </div>
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>
