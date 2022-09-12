@@ -167,8 +167,9 @@ input {
 
 .result input {
   width: 100%;
+  text-align: end;
   padding: 40px 35px;
-  font-size: 3em;
+  font-size: 2.5em;
   background-color: var(--screen-dark-desaturated-blue);
   font-weight: 700;
   color: var(--white);
