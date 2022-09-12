@@ -1,20 +1,20 @@
-const body = document.querySelector("body");
-const toggle = document.querySelector(".change input");
+const container = document.querySelector(".container");
+const toggle = document.querySelector(".input-toggle input");
 toggle.addEventListener("input", () => {
   switch (toggle.value) {
     case "1":
-      body.classList.remove("theme_2", "theme_3");
-      body.classList.add("theme_1");
+      container.classList.remove("theme-2", "theme-3");
+      container.classList.add("theme-1");
       break;
     case "2":
-      body.classList.remove("theme_1", "theme_3");
-      body.classList.add("theme_2");
+      container.classList.remove("theme-1", "theme-3");
+      container.classList.add("theme-2");
       break;
     case "3":
-      body.classList.remove("theme_2", "theme_1");
-      body.classList.add("theme_3");
+      container.classList.remove("theme-2", "theme-1");
+      container.classList.add("theme-3");
       break;
   }
 });
-localStorage.setItem("theme", `theme_${toggle.value}`);
-body.classList.add(localStorage.getItem("theme"));
+localStorage.setItem("theme", `theme-${toggle.value}`);
+container.classList.add(localStorage.getItem("theme"));
